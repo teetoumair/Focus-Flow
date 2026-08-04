@@ -1,0 +1,19 @@
+nav{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+nav a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px;
+    border-radius:8px;
+    text-decoration: none;
+    color: inherit;
+}
+
+nav a:hover{
+    background-color: #f1f1f1;
+}
