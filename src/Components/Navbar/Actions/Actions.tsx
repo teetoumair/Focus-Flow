@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Notification from "../../../assets/icons/Notification.png"
+import NotificationPanel from "./NotificationPanel/NotificatonPanel"
 
 function Actions(){
 
@@ -18,7 +19,7 @@ function Actions(){
             </button>
             {
                 isNotificationOpen &&
-                <p>Notifications Panel</p>
+                <NotificationPanel/>
             }
         </div>
     )
