@@ -3,11 +3,15 @@ import Navigation from "./Navigation/Navigation"
 import "./Sidebar.css"
 import SidebarFooter from "./SidebarFooter/SidebarFooter"
 
-function Sidebar(){
+interface SidebarProps{
+    setActivePage: (page: string)=>void;
+}
+
+function Sidebar({setActivePage}:SidebarProps){
     return(
         <aside className="Sidebar">
             <Logo/>
-            <Navigation/>
+            <Navigation setActivePage={setActivePage}/>
             <SidebarFooter/>
         </aside>
     )

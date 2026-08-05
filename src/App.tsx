@@ -2,18 +2,18 @@ import { useState } from "react"
 import Sidebar from "./Components/Sidebar/Sidebar"
 import Navbar from "./Components/Navbar/Navbar"
 import "./App.css"
-import Projects from "./Pages/Projects"
-import Analytics from "./Pages/Analytics"
-import Settings from "./Pages/Settings"
-import Overview from "./Pages/Overview"
-import Tasks from "./Pages/Tasks"
+import Projects from "./Pages/Projects/Projects"
+import Analytics from "./Pages/Analytics/Analytics"
+import Settings from "./Pages/Settings/Settings"
+import Overview from "./Pages/Overview/Overview"
+import Tasks from "./Pages/Tasks/Tasks"
 
 function App(){
 
-    const [activePage, setActivePage] = useState<string>("")
+    const [activePage, setActivePage] = useState<string>("Overview")
     return(
         <div className="App">
-            <Sidebar/>
+            <Sidebar setActivePage={setActivePage}/>
             <main>
                 <Navbar/>
                 <div>

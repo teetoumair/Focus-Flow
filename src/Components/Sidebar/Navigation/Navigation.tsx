@@ -3,9 +3,14 @@ import tasksIcon from "../../../assets/icons/tasks.png"
 import projectsIcon from "../../../assets/icons/projects.png"
 import analyticsIcon from "../../../assets/icons/analytics.png"
 import settingsIcon from "../../../assets/icons/settings.png"
-
 import "./Navigation.css"
-function Navigation(){
+
+interface NavigationProps{
+    setActivePage : (page:string) =>void;
+}
+
+function Navigation({setActivePage}:NavigationProps){
+
     const navigationItems = [
         {
             id: 1,
@@ -37,14 +42,15 @@ function Navigation(){
         <nav>
             {
                 navigationItems.map((item)=>
-                    <a key={item.id}>
+                    <button key={item.id}
+                    onClick={()=>setActivePage(item.name)}>
                         <img src={item.icon}
                         alt = {item.name}
                         width={20}
                         height={20}
                         />
                         {item.name}
-                    </a>
+                    </button>
                 )
             }
         </nav>

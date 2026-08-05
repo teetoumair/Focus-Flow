@@ -1,0 +1,8 @@
+.StatusRow{
+    display: flex;
+    gap: 12px;
+}
+
+.Cards{
+    border: 1px solid black;
+}
