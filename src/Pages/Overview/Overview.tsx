@@ -13,11 +13,13 @@ function Overview(){
             <div className="StatusCard">
                 <Status/>
             </div>
-            <div>
-                <TodayFocus/>
-            </div>
-            <div>
-                <ActiveProjects/>
+            <div className="Row3">
+                <div>
+                    <TodayFocus/>
+                </div>
+                <div>
+                    <ActiveProjects/>
+                </div>
             </div>
         </div>
     )

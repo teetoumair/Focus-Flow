@@ -1,4 +1,11 @@
 .Overview{
+    padding: 20px;
     align-items: center;
     justify-content: center;
+}
+
+.Row3{
+    padding: 20px;
+    display: flex;
+    flex: 1;
 }
