@@ -2,5 +2,6 @@
     padding: 20px;
     align-items: center;
     justify-content: center;
-    border: 1px solid black
+    border: 1px solid #C7C4D8;
+    border-radius: 12px;
 }

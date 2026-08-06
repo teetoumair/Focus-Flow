@@ -1,4 +1,7 @@
 .SearchInput{
+    border-radius: 100px;
     padding: 5px;
     background-color:  #EFF4FF;
+    height: 54px;
+    width: 384px;
 }

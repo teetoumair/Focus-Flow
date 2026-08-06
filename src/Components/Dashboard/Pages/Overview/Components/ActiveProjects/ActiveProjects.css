@@ -1,0 +1,10 @@
+.ProjectsGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.ProjectCard{
+    padding: 20px;
+    border: 1px solid #C7C4D8;
+    border-radius: 12px;
+}

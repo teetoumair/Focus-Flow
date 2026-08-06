@@ -1,6 +1,6 @@
-import Completed from "../../../../assets/StatusCardIcons/Completed.png"
-import Focus from "../../../../assets/StatusCardIcons/Focus.png"
-import Pending from "../../../../assets/StatusCardIcons/Pending.png"
+import Completed from "../../../../../../assets/StatusCardIcons/Completed.png"
+import Focus from "../../../../../../assets/StatusCardIcons/Focus.png"
+import Pending from "../../../../../../assets/StatusCardIcons/Pending.png"
 
 import "./Status.css"
 

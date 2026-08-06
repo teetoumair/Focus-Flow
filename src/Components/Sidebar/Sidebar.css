@@ -1,6 +1,6 @@
 .Sidebar{
     height: 100vh;
-    width: 256px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     background-color: #EFF4FF;

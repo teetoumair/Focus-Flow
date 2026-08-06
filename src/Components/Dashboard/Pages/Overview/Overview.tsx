@@ -14,10 +14,10 @@ function Overview(){
                 <Status/>
             </div>
             <div className="Row3">
-                <div>
+                <div className="OverviewSection">
                     <TodayFocus/>
                 </div>
-                <div>
+                <div className="OverviewSection">
                     <ActiveProjects/>
                 </div>
             </div>

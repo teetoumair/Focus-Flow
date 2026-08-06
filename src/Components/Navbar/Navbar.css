@@ -1,3 +1,8 @@
+.Left{
+    justify-content: center;
+    padding: 20px;
+}
+
 .Navbar{
     display: flex;
     justify-content: space-between;
