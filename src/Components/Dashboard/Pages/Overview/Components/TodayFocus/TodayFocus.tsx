@@ -1,43 +1,76 @@
+import type {Task} from "../../../../../Types/Types"
 import { useState } from "react"
 import "./TodayFocus.css"
 
-function TodayFocus(){
+interface TodayFocusProps {
+    choices: Task[];
+    setChoices: (value: React.SetStateAction<Task[]>) => void;
+}
 
-    const ChoiceCardItems=[
-        {
-            id: 1,
-            message: "Refactor Authentication Hooks",
-            completed: false
-        },
-        {
-            id: 2,
-            message: "Update Portfolio Documentation",
-            completed: false
-        },
-        {
-            id: 3,
-            message: "Client Meeting: FocusFlow Demo",
-            completed: false
-        },
-        {
-            id: 4,
-            message: "Optimize SVG Assets",
-            completed: false
-        }
-    ]
+function TodayFocus({choices, setChoices}: TodayFocusProps){
+    const [message, setMessage] = useState<string>("")
+
+    const addTask = ()=>
+        setChoices((previousChoices)=>
+            [
+                ...previousChoices,
+                {
+                    id: previousChoices.length+1,
+                    message: message, 
+                    isChecked: false
+                }
+            ]
+        )
+
+    const deleteTask = (id: number)=>{
+        setChoices((previousChoices)=>previousChoices.filter(
+            tasks =>
+                tasks.id!==id)
+        )
+    }
+
+    const toggle = (id: number)=>{
+        setChoices((previousChoices)=>previousChoices.map((tasks)=>
+            tasks.id === id
+            ?{
+                ...tasks,
+                isChecked: !tasks.isChecked
+            }: tasks
+        ))
+    }
 
     return(
         <div>
             <p>Today's Focus</p>
             <div className="ChoiceCard">
+                <div className="NewTask">
+                    <input
+                    placeholder="Add Task"
+                    value = {message}
+                    onChange={(e)=>setMessage(e.target.value)}
+                    />
+                    <button className="AddButton"
+                    onClick={()=>{
+                        addTask()
+                        setMessage("")
+                    }}>
+                        Add Task
+                    </button>
+                </div>
                 {
-                    ChoiceCardItems.map((items)=>(
+                    choices.map((items)=>(
                         <div key={items.id}>
                             <input
                             type="checkbox"
+                            checked={items.isChecked}
+                            onChange={()=>toggle(items.id)}
                             />
                             <span>
-                                {items.message}
+                                Task {items.id}: {items.message}
+                                <button
+                                onClick={()=>deleteTask(items.id)}>
+                                    Delete
+                                </button>
                             </span>
                         </div>
                     ))

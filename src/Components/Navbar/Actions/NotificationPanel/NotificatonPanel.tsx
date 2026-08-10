@@ -7,11 +7,9 @@ function NotificationPanel(){
                 Notification
             </h3>
             <ul>
-                <li>
-                    <li>Task deadline today</li>
-                    <li>New project update</li>
-                    <li>Meeting at 3 PM</li>
-                </li>
+                <li>Task deadline today</li>
+                <li>New project update</li>
+                <li>Meeting at 3 PM</li>
             </ul>
         </div>
     )
