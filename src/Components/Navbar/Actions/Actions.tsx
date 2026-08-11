@@ -1,19 +1,14 @@
-import { useState, useEffect } from "react"
-import type { Notification } from "../../Services/Notifications"
-import { getNotifications } from "../../Services/Notifications"
+import { useState } from "react"
+import { useNotifications } from "../../Contexts/NotificationContext"
 import NotificationIcon from "../../../assets/icons/Notification.png"
 import NotificationPanel from "./NotificationPanel/NotificatonPanel"
 
 function Actions(){
 
-    const [notifications, setNotifications] = useState<Notification[]>([])
-    const [isNotificationOpen, setIsNotificationOpen] = useState<boolean>(false)
-    const unReadCount = notifications.filter(n=>!n.isRead).length
+    const {notifications} = useNotifications()
+    const [isNotificationOpen, setIsNotificationOpen]= useState<boolean>(false)
+    const unReadCount = notifications.filter(n=> !n.isRead).length
     
-    useEffect(()=>{
-        setNotifications(getNotifications())
-    }, [])
-
     return(
         <div>
             <button

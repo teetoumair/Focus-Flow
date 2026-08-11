@@ -1,3 +1,4 @@
+import { useNotifications } from "../../../../../Contexts/NotificationContext";
 import type {Task} from "../../../../../Types/Types"
 import { useState } from "react"
 import "./TodayFocus.css"
@@ -8,9 +9,12 @@ interface TodayFocusProps {
 }
 
 function TodayFocus({choices, setChoices}: TodayFocusProps){
+
+    const { addNotification } = useNotifications()
     const [message, setMessage] = useState<string>("")
 
-    const addTask = ()=>
+    const addTask = ()=>{
+        addNotification("New Task Added")
         setChoices((previousChoices)=>
             [
                 ...previousChoices,
@@ -21,8 +25,10 @@ function TodayFocus({choices, setChoices}: TodayFocusProps){
                 }
             ]
         )
+    }
 
     const deleteTask = (id: number)=>{
+        addNotification("Task Deleted")
         setChoices((previousChoices)=>previousChoices.filter(
             tasks =>
                 tasks.id!==id)
