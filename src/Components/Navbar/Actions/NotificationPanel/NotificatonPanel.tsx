@@ -1,15 +1,22 @@
+import type { Notification } from "../../../Services/Notifications"
 import "./NotificationPanel.css"
 
-function NotificationPanel(){
+interface notificationProps{
+    notifications: Notification[];
+}
+
+function NotificationPanel({notifications} : notificationProps){
     return(
         <div className="NotificationPanel">
-            <h3>
-                Notification
-            </h3>
+            <h3>Notification</h3>
             <ul>
-                <li>Task deadline today</li>
-                <li>New project update</li>
-                <li>Meeting at 3 PM</li>
+                {
+                    notifications.map((n)=>(
+                        <li key={n.id} className={n.isRead ? "read": "unread"}>
+                            {n.message}
+                        </li>
+                    ))
+                }
             </ul>
         </div>
     )
